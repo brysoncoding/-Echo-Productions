@@ -11,7 +11,7 @@ export default function ServicesPage() {
   return <main className="page">
     <header className="pageHeader">
       <a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a>
-      <a href="/#contact" className="secondaryButton">Start a project</a>
+      <a href="/quote" className="secondaryButton">Start a project</a>
     </header>
     <section className="pageHero">
       <p className="eyebrow">SERVICES</p>
