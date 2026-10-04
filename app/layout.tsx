@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://echoproductions.runs-at.dev"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Echo Productions | Live Production & AV",
     template: "%s | Echo Productions",
@@ -26,6 +30,11 @@ export const metadata: Metadata = {
       "Reliable live audio, video, lighting, streaming, and production support.",
     type: "website",
     siteName: "Echo Productions",
+  },
+  twitter: {
+    card: "summary",
+    title: "Echo Productions | Live Production & AV",
+    description: "Reliable live audio, video, lighting, streaming, and production support.",
   },
   robots: {
     index: true,
