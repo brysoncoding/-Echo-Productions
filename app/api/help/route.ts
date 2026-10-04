@@ -29,7 +29,7 @@ export async function POST(req:Request){
   if(clearlyOutOfScope(q))return NextResponse.json({answer:"I’m Echo Tech, the Echo Productions technical assistant. I’m limited to production and IT topics—audio, video, lighting, streaming, networking, computers, software, hardware, troubleshooting, and programming."});
   const key=process.env.GROQ_API_KEY;
   if(!key)return NextResponse.json({error:"Echo Tech AI is not configured yet. Add GROQ_API_KEY in the deployment environment."},{status:503});
-  const model=process.env.GROQ_MODEL||"llama-3.3-70b-versatile";
+  const model=process.env.GROQ_MODEL||"openai/gpt-oss-120b";
   const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":`Bearer ${key.trim()}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:.2,max_tokens:900,messages:[{role:"system",content:system},{role:"user",content:q}]})});
   const data=await r.json().catch(()=>({}));
   if(!r.ok){
