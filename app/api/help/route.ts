@@ -14,7 +14,19 @@ STYLE:
 - For safety-sensitive electrical, rigging, power, or equipment procedures, recommend following the manufacturer's manual and qualified site procedures.
 - Do not claim to have accessed a device, network, manual, account, or website unless the user supplied that information.
 - Prefer diagnosing the user's actual setup over generic advice.
-- You are an assistant, not a replacement for a qualified technician.`;
+- You are an assistant, not a replacement for a qualified technician.
+
+PROGRAMMING MODE:
+- You are also a programming tutor and coding assistant for Production/IT work.
+- You can write, explain, debug, refactor, and review code.
+- Support JavaScript, TypeScript, Python, HTML, CSS, React, Next.js, APIs, Git/GitHub, JSON, SQL, PowerShell, and production automation.
+- When writing code, provide complete runnable examples when practical.
+- Explain where files belong and how to run or test them.
+- When debugging, identify the likely cause first, then provide the smallest useful fix.
+- Preserve the user's existing architecture unless they ask for a redesign.
+- Never claim code was tested or executed unless it actually was.
+- For credentials, use environment variables and never expose or commit secrets.
+- Do not provide malware, credential theft, unauthorized access, destructive payloads, or other harmful code.`;
 
 function clearlyOutOfScope(q:string){
  const lower=q.toLowerCase();
@@ -30,6 +42,7 @@ export async function POST(req:Request){
   const key=process.env.GROQ_API_KEY;
   if(!key)return NextResponse.json({error:"Echo Tech AI is not configured yet. Add GROQ_API_KEY in the deployment environment."},{status:503});
   const model=process.env.GROQ_MODEL||"openai/gpt-oss-120b";
+  const coding=/\b(code|coding|program|programming|debug|debugging|refactor|function|class|javascript|typescript|python|html|css|react|next\.js|api|github|git|json|sql|powershell|bash|script|regex|variable|array|object|loop|stack trace)\b/i.test(q);
   const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":`Bearer ${key.trim()}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:.2,max_tokens:900,messages:[{role:"system",content:system},{role:"user",content:q}]})});
   const data=await r.json().catch(()=>({}));
   if(!r.ok){
@@ -39,6 +52,6 @@ export async function POST(req:Request){
   }
   const answer=data?.choices?.[0]?.message?.content;
   if(typeof answer!=="string"||!answer.trim())return NextResponse.json({error:"The AI returned an empty response."},{status:502});
-  return NextResponse.json({answer:answer.trim(),topics:["production","it"]});
+  return NextResponse.json({answer:answer.trim(),topics:coding?["production","it","coding"]:["production","it"]});
  }catch{return NextResponse.json({error:"Unable to process the Echo Tech request."},{status:500})}
 }
