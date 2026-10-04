@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact ECHO Productions | Production Support & Questions",
+  description: "Contact ECHO Productions about live production, AV support, technical questions, training, or an upcoming project.",
+  alternates: { canonical: "/contact" },
+};
+
 "use client";import{useState}from"react";
 export default function ContactPage(){const[sent,setSent]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState("");
 async function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setLoading(true);setError("");try{const b=Object.fromEntries(new FormData(e.currentTarget));const r=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});const d=await r.json();if(!r.ok)throw new Error(d.error);setSent(true)}catch(x){setError(x instanceof Error?x.message:"Unable to send. Please try again.")}finally{setLoading(false)}}
