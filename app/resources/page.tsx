@@ -75,8 +75,8 @@ export default function ResourcesPage() {
 
         <figure className="productionPhoto">
           <img
-            src="/photos/production-resources.jpg"
-            alt="Echo Productions production environments showing an audio console, video control room, live production system, and stage lighting"
+            src="/photos/IMG_1937.jpeg"
+            alt="Echo Productions production environment showing an audio console and live production control setup"
           />
           <figcaption>
             Audio engineering, video control, live production, and lighting — all working together on show day.
