@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About ECHO Productions | Live Production & AV",
+  description: "Learn how ECHO Productions approaches live audio, video, lighting, technical operations, training, and event production support.",
+  alternates: { canonical: "/about" },
+};
+
 export default function AboutPage(){return <main className="page"><header className="pageHeader"><a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a><a href="/quote" className="secondaryButton">Start a project</a></header>
 <section className="pageHero"><p className="eyebrow">ABOUT ECHO PRODUCTIONS</p><h1>Technical production without the unnecessary complexity.</h1><p>Echo Productions is built around dependable execution, clear communication, and practical technical support for churches, events, creators, and production teams.</p></section>
 <section className="aboutGrid"><div className="aboutCard"><strong>01</strong><h2>Reliable</h2><p>Preparation, communication, and troubleshooting are treated as part of the production from the beginning.</p></div><div className="aboutCard"><strong>02</strong><h2>Technical</h2><p>Audio, video, lighting, presentation, networking, and show workflows all have to work together.</p></div><div className="aboutCard"><strong>03</strong><h2>Practical</h2><p>We focus on solutions that fit the actual team, venue, equipment, budget, and goals—not unnecessary complexity.</p></div></section>
