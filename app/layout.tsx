@@ -30,11 +30,20 @@ export const metadata: Metadata = {
       "Reliable live audio, video, lighting, streaming, and production support.",
     type: "website",
     siteName: "Echo Productions",
+    images: [
+      {
+        url: "/photos/IMG_2050.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Echo Productions live production setup",
+      },
+    ],
   },
   twitter: {
     card: "summary",
     title: "Echo Productions | Live Production & AV",
     description: "Reliable live audio, video, lighting, streaming, and production support.",
+    images: ["/photos/IMG_2050.jpeg"],
   },
   robots: {
     index: true,
