@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Echo Productions",
     images: [
       {
-        url: "/photos/IMG_2050.jpeg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Echo Productions live production setup",
@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Echo Productions | Live Production & AV",
     description: "Reliable live audio, video, lighting, streaming, and production support.",
-    images: ["/photos/IMG_2050.jpeg"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
