@@ -25,9 +25,14 @@ export async function POST(req:Request){
   if(!inScope(q))return NextResponse.json({answer:"I’m Echo Tech, the Echo Productions technical assistant. I’m limited to production and IT topics—audio, video, lighting, streaming, networking, computers, software, hardware, troubleshooting, and programming."});
   const key=process.env.GROQ_API_KEY;
   if(!key)return NextResponse.json({error:"Echo Tech AI is not configured yet. Add GROQ_API_KEY in the deployment environment."},{status:503});
-  const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({model:process.env.GROQ_MODEL||"llama-3.3-70b-versatile",temperature:.2,max_tokens:900,messages:[{role:"system",content:system},{role:"user",content:q}]})});
-  const data=await r.json();
-  if(!r.ok)return NextResponse.json({error:"Echo Tech could not reach the AI service right now."},{status:502});
+  const model=process.env.GROQ_MODEL||"llama-3.3-70b-versatile";
+  const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":`Bearer ${key.trim()}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:.2,max_tokens:900,messages:[{role:"system",content:system},{role:"user",content:q}]})});
+  const data=await r.json().catch(()=>({}));
+  if(!r.ok){
+    const providerMessage=typeof data?.error?.message==="string"?data.error.message:"Groq returned an unknown error.";
+    console.error("Echo Tech Groq error",{status:r.status,model,providerMessage});
+    return NextResponse.json({error:`Echo Tech AI service error: ${providerMessage}`},{status:502});
+  }
   const answer=data?.choices?.[0]?.message?.content;
   if(typeof answer!=="string"||!answer.trim())return NextResponse.json({error:"The AI returned an empty response."},{status:502});
   return NextResponse.json({answer:answer.trim(),topics:["production","it"]});
