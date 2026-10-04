@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ECHO Productions Capabilities | Audio, Video, Lighting & Operations",
+  description: "Explore ECHO Productions capabilities across live audio, video, lighting, production operations, and technical support.",
+  alternates: { canonical: "/capabilities" },
+};
+
 const capabilities = [
   ["AUDIO","FOH mixing","Monitor mixing","Wireless & stage support","System troubleshooting"],
   ["VIDEO","ProPresenter","Playback systems","Displays & screens","Graphics operation"],
