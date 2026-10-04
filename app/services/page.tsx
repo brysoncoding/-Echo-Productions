@@ -20,8 +20,16 @@ export default function ServicesPage() {
     </section>
     <section className="serviceList">
       {services.map(([number,title,description]) => <article className="serviceRow" key={number}>
-        <span>{number}</span><div><h2>{title}</h2><p>{description}</p></div><b>↗</b>
+        <span>{number}</span>
+        <div><h2>{title}</h2><p>{description}</p><a href="/quote" className="textLink">Build this into my project →</a></div>
+        <b aria-hidden="true">↗</b>
       </article>)}
+    </section>
+    <section className="section">
+      <p className="eyebrow">NOT SURE WHAT YOU NEED?</p>
+      <h2>Tell us about the show.</h2>
+      <p className="heroText">We can help turn your goals into a practical production plan, whether you need one technician or broader technical support.</p>
+      <div className="actions"><a href="/quote" className="primaryButton">Start a project →</a><a href="/help" className="secondaryButton">Ask Echo Tech</a></div>
     </section>
   </main>;
 }
