@@ -1,10 +1,10 @@
 const services=[["Live Audio","FOH, monitors, system support, and show operation."],["Video & Graphics","ProPresenter, playback, screens, and presentation systems."],["Lighting","Show operation and technical lighting support."]];
 
 const work=[
-  ["01","Live Audio","AUDIO / LIVE PRODUCTION","Live sound support, mixing, system setup, troubleshooting, and show operation."],
-  ["02","Live Video & Switching","VIDEO / BROADCAST","Camera operation, live switching, IMAG, presentation systems, and livestream production."],
-  ["03","Lighting & Show Control","LIGHTING / PRODUCTION","Lighting operation, programming, show looks, and technical production support."],
-  ["04","Production Systems","SYSTEMS / IT","Building, configuring, troubleshooting, and maintaining the technology behind live production."]
+  ["01","Live Audio","AUDIO / LIVE PRODUCTION","Live sound support, mixing, system setup, troubleshooting, and show operation.","/photos/IMG_1937.jpeg","Live audio console and production workspace"],
+  ["02","Live Video & Switching","VIDEO / BROADCAST","Camera operation, live switching, IMAG, presentation systems, and livestream production.","/photos/IMG_1947.jpeg","Live video control room and switching systems"],
+  ["03","Lighting & Show Control","LIGHTING / PRODUCTION","Lighting operation, programming, show looks, and technical production support.","/photos/IMG_1955.jpeg","Live stage lighting and production systems"],
+  ["04","Production Systems","SYSTEMS / IT","Building, configuring, troubleshooting, and maintaining the technology behind live production.","/photos/IMG_2136.jpeg","Live production control and stage technology"]
 ];
 
 export default function Home(){
@@ -37,11 +37,12 @@ export default function Home(){
       <p className="heroText">Real production work, technical systems, and event support—organized into the areas where Echo Productions can make a difference.</p>
 
       <div className="workGrid">
-        {work.map(([number,title,category,description])=>
+        {work.map(([number,title,category,description,image,alt])=>
           <article className="workCard" key={title}>
-            <div className="workMedia">
-              <span>PHOTO / PROJECT</span>
-              <strong>{number}</strong>
+            <div className="workMedia" style={{ position: "relative", overflow: "hidden" }}>
+              <img src={image} alt={alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <span style={{ position: "absolute", top: 16, left: 16, zIndex: 1 }}>PHOTO / PROJECT</span>
+              <strong style={{ position: "absolute", right: 16, bottom: 12, zIndex: 1 }}>{number}</strong>
             </div>
             <div className="workInfo">
               <p className="eyebrow">{category}</p>
