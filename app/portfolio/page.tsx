@@ -5,6 +5,12 @@ const projects=[
   ["CREATOR SUPPORT","Content Production","Audio, AV, recording, and live-stream support for creators.","/photos/IMG_1955.jpeg","Live stage lighting and production systems"]
 ];
 
+const workflow=[
+  ["01","PLAN","Define the event, technical goals, schedule, and support needed."],
+  ["02","PREP","Build the production plan, confirm systems, and prepare for show day."],
+  ["03","EXECUTE","Operate, troubleshoot, and support the production from setup through wrap."],
+];
+
 export default function PortfolioPage(){
   return <main className="page">
     <header className="pageHeader">
@@ -19,9 +25,9 @@ export default function PortfolioPage(){
     <section className="portfolioGrid">
       {projects.map(([type,title,description,image,alt],i)=>
         <article className="projectCard" key={title}>
-          <div className="projectVisual" style={{ position: "relative", overflow: "hidden" }}>
-            <img src={image} alt={alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-            <span style={{ position: "absolute", left: 16, bottom: 12, zIndex: 1 }}>EP / 0{i+1}</span>
+          <div className="projectVisual" style={{position:"relative",overflow:"hidden"}}>
+            <img src={image} alt={alt} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+            <span style={{position:"absolute",left:16,bottom:12,zIndex:1}}>EP / 0{i+1}</span>
           </div>
           <p className="eyebrow">{type}</p>
           <h2>{title}</h2>
@@ -29,6 +35,16 @@ export default function PortfolioPage(){
           <a href="/quote" className="textLink">Discuss a similar project →</a>
         </article>
       )}
+    </section>
+    <section className="section">
+      <p className="eyebrow">HOW PROJECTS WORK</p>
+      <h2>From planning to show day.</h2>
+      <div className="quickGuideGrid">
+        {workflow.map(([number,title,description])=><article className="quickGuide" key={number}>
+          <span>{number}</span><div><h3>{title}</h3><p>{description}</p></div>
+        </article>)}
+      </div>
+      <div className="actions"><a href="/quote" className="primaryButton">Start a project →</a><a href="/services" className="secondaryButton">View services</a></div>
     </section>
   </main>
 }
