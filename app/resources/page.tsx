@@ -61,6 +61,29 @@ export default function ResourcesPage() {
         </p>
       </section>
 
+      <section className="section productionGallery">
+        <div className="sectionTop">
+          <div>
+            <p className="eyebrow">PRODUCTION IN ACTION</p>
+            <h2>Real systems. Real shows. Real-world production.</h2>
+            <p className="heroText">
+              A look at the kind of audio, video, lighting, and show-control
+              environments these resources are built around.
+            </p>
+          </div>
+        </div>
+
+        <figure className="productionPhoto">
+          <img
+            src="/photos/production-resources.jpg"
+            alt="Echo Productions production environments showing an audio console, video control room, live production system, and stage lighting"
+          />
+          <figcaption>
+            Audio engineering, video control, live production, and lighting — all working together on show day.
+          </figcaption>
+        </figure>
+      </section>
+
       <section className="section" style={{ paddingTop: 70 }}>
         <div className="sectionTop">
           <div>
