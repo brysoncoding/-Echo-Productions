@@ -16,13 +16,17 @@ STYLE:
 - Prefer diagnosing the user's actual setup over generic advice.
 - You are an assistant, not a replacement for a qualified technician.`;
 
-function inScope(q:string){return allowed.test(q)}
+function clearlyOutOfScope(q:string){
+ const lower=q.toLowerCase();
+ const unrelated=/\\b(pizza|recipe|dating|relationship|love advice|celebrity gossip|sports scores|politics|weather forecast|homework|math problem|movie review|song lyrics|vacation itinerary)\\b/i;
+ return unrelated.test(lower)&&!allowed.test(lower);
+}
 
 export async function POST(req:Request){
  try{
   const body=await req.json();const q=typeof body?.message==="string"?body.message.trim():"";
   if(!q)return NextResponse.json({error:"Enter a question."},{status:400});
-  if(!inScope(q))return NextResponse.json({answer:"I’m Echo Tech, the Echo Productions technical assistant. I’m limited to production and IT topics—audio, video, lighting, streaming, networking, computers, software, hardware, troubleshooting, and programming."});
+  if(clearlyOutOfScope(q))return NextResponse.json({answer:"I’m Echo Tech, the Echo Productions technical assistant. I’m limited to production and IT topics—audio, video, lighting, streaming, networking, computers, software, hardware, troubleshooting, and programming."});
   const key=process.env.GROQ_API_KEY;
   if(!key)return NextResponse.json({error:"Echo Tech AI is not configured yet. Add GROQ_API_KEY in the deployment environment."},{status:503});
   const model=process.env.GROQ_MODEL||"llama-3.3-70b-versatile";
