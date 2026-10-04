@@ -1,11 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Request a Quote | ECHO Productions Live Production & AV",
-  description: "Tell ECHO Productions about your event, technical needs, date, and location to request a production quote.",
-  alternates: { canonical: "/quote" },
-};
-
 "use client";import{useState}from"react";
 const options=["Church service","Concert","Special event","Livestream","Training","Corporate / conference","Other"];
 export default function QuotePage(){const[sent,setSent]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState("");
