@@ -11,7 +11,7 @@ export default function Home(){
   return <main>
     <nav className="nav">
       <a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a>
-      <div className="navLinks"><a href="/services">Services</a><a href="/portfolio">Work</a><a href="/resources">Resources</a><a href="/about">About</a><a href="/contact" className="navButton">Contact</a></div>
+      <div className="navLinks"><a href="/services">Services</a><a href="/portfolio">Work</a><a href="/pricing">Pricing</a><a href="/resources">Resources</a><a href="/about">About</a><a href="/contact" className="navButton">Contact</a></div>
     </nav>
 
     <section className="hero">
@@ -29,7 +29,7 @@ export default function Home(){
       <a className="textLink" href="/services">See all services →</a>
     </section>
 
-    <section className="statement"><p>From setup to showtime, the goal is simple: make the technology work so the moment can happen.</p></section>
+    <section className="section"><p className="eyebrow">PACKAGES</p><h2>Need production support?</h2><p className="heroText">Explore flexible service packages or request a custom quote for your event.</p><div className="actions"><a href="/pricing" className="primaryButton">View pricing →</a><a href="/quote" className="secondaryButton">Request a quote</a></div></section><section className="statement"><p>From setup to showtime, the goal is simple: make the technology work so the moment can happen.</p></section>
 
     <section className="section workSection">
       <p className="eyebrow">SELECTED WORK</p>
@@ -73,6 +73,6 @@ export default function Home(){
 
     <section className="contact"><div><p className="eyebrow">READY TO WORK TOGETHER?</p><h2>Have a production coming up?</h2><p>Tell us what you&apos;re planning and we&apos;ll figure out the technical side.</p></div><a className="primaryButton" href="/quote">Request a quote</a></section>
 
-    <footer><div className="brand">ECHO<span>PRODUCTIONS</span></div><div className="footerLinks"><a href="/services">Services</a><a href="/portfolio">Work</a><a href="/resources">Resources</a><a href="/help">Tech Assist</a><a href="/contact">Contact</a></div><p>© 2026 Echo Productions.</p></footer>
+    <footer><div className="brand">ECHO<span>PRODUCTIONS</span></div><div className="footerLinks"><a href="/services">Services</a><a href="/portfolio">Work</a><a href="/pricing">Pricing</a><a href="/resources">Resources</a><a href="/help">Tech Assist</a><a href="/about">About</a><a href="/contact">Contact</a></div><p>© 2026 Echo Productions.</p></footer>
   </main>
 }
