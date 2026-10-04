@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ECHO Productions Pricing | Production Services & Event Support",
+  description: "Explore ECHO Productions service packages and learn what goes into custom pricing for live production and event support.",
+  alternates: { canonical: "/pricing" },
+};
+
 const packages = [
   ["SERVICE CALL","Flexible","Technical help for a specific service, rehearsal, or production need.","Best for focused technical help."],
   ["EVENT SUPPORT","Custom","Production operation and technical support tailored to your event.","Best for show-day support."],
