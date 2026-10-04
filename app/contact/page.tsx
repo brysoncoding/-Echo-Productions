@@ -1,18 +1,3 @@
-export default function ContactPage() {
-  return <main className="page">
-    <header className="pageHeader">
-      <a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a>
-      <a href="/" className="secondaryButton">Back home</a>
-    </header>
-    <section className="pageHero">
-      <p className="eyebrow">CONTACT</p>
-      <h1>Tell us what you&apos;re building.</h1>
-      <p>For now, email us with the event date, location, production needs, and anything else we should know.</p>
-      <a className="primaryButton" href="mailto:hello@echoproductions.com">hello@echoproductions.com</a>
-    </section>
-    <section className="contactChecklist">
-      <h2>Helpful details</h2>
-      <p>Event or service type</p><p>Date and location</p><p>Audio / video / lighting needs</p><p>Approximate schedule</p><p>Anything you already have in place</p>
-    </section>
-  </main>;
-}
+"use client";
+import { useState } from "react";
+export default function ContactPage(){const [sent,setSent]=useState(false);return <main className="page"><header className="pageHeader"><a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a><a href="/" className="secondaryButton">Back home</a></header><section className="pageHero"><p className="eyebrow">PROJECT REQUEST</p><h1>Tell us what you&apos;re building.</h1><p>Share the basics below. This form is ready to connect to a real email or CRM endpoint later.</p></section>{sent?<section className="successCard"><span>✓</span><h2>Request ready to go.</h2><p>Thanks! Connect this form to your preferred email service before launch.</p><a href="/" className="primaryButton">Back to home</a></section>:<form className="projectForm" onSubmit={e=>{e.preventDefault();setSent(true)}}><label>Name<input required name="name" placeholder="Your name"/></label><label>Email<input required type="email" name="email" placeholder="you@example.com"/></label><label>Event / project<input required name="project" placeholder="Sunday service, concert, event..."/></label><label>Date<input type="date" name="date"/></label><label>What do you need?<textarea required name="details" rows={6} placeholder="Audio, video, lighting, training, full production..."/></label><button className="primaryButton" type="submit">Send project request →</button></form>}</main>}
