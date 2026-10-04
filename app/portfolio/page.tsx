@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ECHO Productions Portfolio | Live Audio, AV & Event Production",
+  description: "See selected ECHO Productions work across live audio, full production, team training, creator support, and technical operations.",
+  alternates: { canonical: "/portfolio" },
+};
+
 const projects=[
   ["LIVE AUDIO","Church Production","FOH mixing, monitor support, stage support, and show-day operation.","/photos/IMG_1937.jpeg","Live audio console and production workspace"],
   ["FULL PRODUCTION","Special Event","Audio, video, lighting, graphics, and technical coordination.","/photos/IMG_2136.jpeg","Live event stage and production systems"],
