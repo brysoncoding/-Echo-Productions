@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ECHO Productions Resources | Live Production & AV Guides",
+  description: "Practical resources for audio, video, lighting, networking, IT, and show-day operations.",
+  alternates: { canonical: "/resources" },
+};
+
 const categories = [
   {
     type: "AUDIO",
