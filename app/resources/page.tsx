@@ -75,7 +75,7 @@ export default function ResourcesPage() {
 
         <figure className="productionPhoto">
           <img
-            src="/photos/IMG_1937.jpeg"
+            src="/photos/IMG_2050.jpg"
             alt="Echo Productions production environment showing an audio console and live production control setup"
           />
           <figcaption>
