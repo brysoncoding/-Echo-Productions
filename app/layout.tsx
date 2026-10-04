@@ -56,9 +56,31 @@ export default function RootLayout({
 }: {
   readonly children: React.ReactNode;
 }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://echoproductions.runs-at.dev/#organization",
+    name: "Echo Productions",
+    url: "https://echoproductions.runs-at.dev/",
+    description:
+      "Live audio, video, lighting, streaming, and technical production support.",
+    founder: {
+      "@type": "Person",
+      name: "Bryson Comfort",
+    },
+  };
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
