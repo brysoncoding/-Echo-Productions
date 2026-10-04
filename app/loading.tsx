@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="page"><section className="pageHero"><p className="eyebrow">ECHO PRODUCTIONS</p><h1>Loading production...</h1><p>Please wait.</p></section></main>;}
