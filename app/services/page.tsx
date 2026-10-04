@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ECHO Productions Services | Live Audio, Video, Lighting & AV",
+  description: "Explore ECHO Productions services for live audio, video, graphics, lighting, production operations, training, and events.",
+  alternates: { canonical: "/services" },
+};
+
 const services = [
   ["01","Live Audio","FOH, monitors, system support, show operation, and troubleshooting."],
   ["02","Video & Graphics","ProPresenter, presentation systems, playback, screens, and graphics operation."],
