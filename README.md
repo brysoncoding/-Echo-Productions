@@ -4,7 +4,7 @@ Professional live production, AV, and technical support website.
 
 ## 🌐 Live site
 
-The project is deployed with Vercel. The GitHub repository is the source of the website.
+The project is deployed with Vercel. The GitHub repository is the source of the website.\n\n[![Visit ECHO Productions](https://img.shields.io/badge/Visit-ECHO%20Productions-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://echoproductions.runs-at.dev/)\n\n**Live website:** https://echoproductions.runs-at.dev/
 
 ## Features
 
