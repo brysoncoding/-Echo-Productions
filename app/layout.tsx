@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://echoproductions.runs-at.dev"),
+  metadataBase: new URL("https://www.echoproductions.cc"),
   alternates: {
     canonical: "/",
   },
@@ -59,9 +59,9 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://echoproductions.runs-at.dev/#organization",
+    "@id": "https://www.echoproductions.cc/#organization",
     name: "Echo Productions",
-    url: "https://echoproductions.runs-at.dev/",
+    url: "https://www.echoproductions.cc/",
     description:
       "Live audio, video, lighting, streaming, and technical production support.",
     founder: {
