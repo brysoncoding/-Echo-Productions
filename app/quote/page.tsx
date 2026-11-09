@@ -1,5 +1,5 @@
 "use client";import{useState}from"react";
-const options=["Church service","Concert","Special event","Livestream","Training","Corporate / conference","Other"];
+const options=["Church service","Concert","Special event","Livestream","Training","Corporate / conference","IT & production support","IT support","Production work","AV / technology upgrades","Business / commercial space (store, barbershop, etc.)","Other"];
 export default function QuotePage(){const[sent,setSent]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState("");
 async function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setLoading(true);setError("");try{const b=Object.fromEntries(new FormData(e.currentTarget));const r=await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});const d=await r.json();if(!r.ok)throw new Error(d.error);setSent(true)}catch(x){setError(x instanceof Error?x.message:"Unable to submit. Please try again.")}finally{setLoading(false)}}
 return <main className="page"><header className="pageHeader"><a href="/" className="brand">ECHO<span>PRODUCTIONS</span></a><a href="/services" className="secondaryButton">View services</a></header>
